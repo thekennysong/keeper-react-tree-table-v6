@@ -1,6 +1,5 @@
 import { ROW_DEFAULT_HEIGHT } from './constants';
 
-
 export type RowData = any;
 
 export type RowMetadata = {
@@ -9,13 +8,13 @@ export type RowMetadata = {
 
   height: number;
   hasChildren: boolean;
-}
+};
 
 export type RowState = {
   isVisible: boolean;
   isExpanded: boolean;
   top: number;
-}
+};
 
 export class RowModel {
   static DEFAULT_HEIGHT: number = ROW_DEFAULT_HEIGHT;
@@ -43,7 +42,7 @@ export default class Row extends RowModel implements RowAPI {
 
   constructor(model: RowModel, api: RowAPI) {
     // RowModel
-    super(model.data, model.metadata, model.$state)
+    super(model.data, model.metadata, model.$state);
 
     // RowAPI
     this.toggleChildren = api.toggleChildren;

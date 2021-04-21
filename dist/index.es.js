@@ -1099,7 +1099,12 @@ var VirtualListRow = /*#__PURE__*/function (_Component) {
       return /*#__PURE__*/React.createElement("div", {
         className: "cp_tree-table_row",
         style: _objectSpread2(_objectSpread2({}, STYLE_ROW$1), {}, {
-          height: "".concat(row.metadata.height, "px")
+          height: "".concat(row.metadata.height, "px"),
+          background: row.data.type === 'transaction' ? (row.data.indexTxn + 1) % 2 !== 0 ? '#e6e6eb' : 'white' : 'none',
+          borderTop: row.data.type === 'transaction' && row.data.indexTxn === 0 ? 'solid 2px black' : 'none',
+          borderLeft: row.data.type === 'transaction' ? 'solid 2px black' : 'none',
+          borderRight: row.data.type === 'transaction' ? 'solid 2px black' : 'none',
+          borderBottom: row.data.type === 'transaction' && row.data.indexTxn === row.data.totalTxns - 1 ? 'solid 2px black' : 'none'
         }),
         "data-index": index,
         "data-relindex": relIndex
